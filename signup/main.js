@@ -17,7 +17,7 @@ async function signup(e){
         console.log(response)
         if (response.status === 201){
             console.log('success');
-            alert('signup sucessfull')
+            alert('Successfuly signed up')
             // window.location.href='../login/login.html'
         }else{
             e.target.password.value='';
@@ -25,7 +25,10 @@ async function signup(e){
         }
     } catch (err) {
        if(err.response.status == 409){
-        alert('user already exist')
+        alert('User already exist , Please Login')
+       }
+       else{
+        console.log(err)
        }
     }
 }
