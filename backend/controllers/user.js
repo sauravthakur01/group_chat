@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt');
-// const jwt = require('jsonwebtoken');
+var jwt = require('jsonwebtoken');
 
 const User = require('../models/user')
 
@@ -30,4 +30,34 @@ exports.postSignup = async(req ,res,next)=>{
         res.status(500).json(err);
     }
     
+}
+
+exports.postLogin = async(req,res,next)=>{
+    
+    const {email,password} = req.body ;
+
+    try {
+        if(!email || !password){
+            return res.status(400).json({message:'enter all fields'})
+        }
+        let user = await User.findOne({where:{email}});
+        if(!user){
+            return res.status(404).json({message:'User not found'})
+        }
+        bcrypt.compare(password, user.password, (err, matchPassUser)=>{
+            if(!matchPassUser){
+             return res.status(401).json({message:'User not authorized'})
+            }
+            return res.status(200).json({message:'login sucess' ,token:generateAccessToken(user.id) })
+         });
+        
+
+    } catch (err) {
+        return res.status(500).json(err)
+    }
+}
+
+function generateAccessToken(id){
+    // console.log('////////////////////////' ,process.env.JWT_SECRET)
+    return jwt.sign({ userId : id }, process.env.JWT_SECRET);
 }

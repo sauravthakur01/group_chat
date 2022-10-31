@@ -12,24 +12,27 @@ async function signup(e){
 
     console.log(loginDetails)
 
-    // try {
-    //     const response = await axios.post("http://localhost:3000/user/login" , loginDetails)
-    //     console.log(response)
-    //     // if (response.status === 201){
-    //     //     console.log('success');
-    //     //     alert('Successfuly signed up')
-    //     //     // window.location.href='../login/login.html'
-    //     // }else{
-    //     //     e.target.password.value='';
-    //     //     console.log('bye')
-    //     // }
-    // } catch (err) {
-    //     console.log(err)
-    // //    if(err.response.status == 409){
-    // //     alert('User already exist , Please Login')
-    // //    }
-    // //    else{
-    // //     console.log(err)
-    // //    }
-    // }
+    try {
+        const response = await axios.post("http://localhost:3000/user/login" , loginDetails)
+        if (response.status === 200){
+            console.log(response.data.token)
+            alert('User login success')
+            
+        }else{
+            e.target.password.value='';
+            console.log('bye')
+        }
+    } catch (err) {
+        console.log(err)
+       if(err.response.status == 400){
+        alert('Enter all fields')
+       }if(err.response.status == 404){
+        alert('User not found , Please create an account')
+       }if(err.response.status == 401){
+        alert('User not authorized')
+       }
+       else{
+        console.log(err)
+       }
+    }
 }

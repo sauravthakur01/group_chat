@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors')
 const sequelize = require('./utils/database')
 
+require('dotenv').config()
+
 const User = require('./models/user');
 
 const userRouter = require('./routes/user');
