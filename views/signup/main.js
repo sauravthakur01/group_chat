@@ -18,7 +18,7 @@ async function signup(e){
         if (response.status === 201){
             console.log('success');
             alert('Successfuly signed up')
-            // window.location.href='../login/login.html'
+            window.location.href='../login/login.html'
         }else{
             e.target.password.value='';
             console.log('bye')
