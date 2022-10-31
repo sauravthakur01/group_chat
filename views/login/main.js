@@ -10,13 +10,14 @@ async function signup(e){
         password :e.target.password.value
     }
 
-    console.log(loginDetails)
+   
 
     try {
         const response = await axios.post("http://localhost:3000/user/login" , loginDetails)
         if (response.status === 200){
             console.log(response.data.token)
             alert('User login success')
+            window.location.href = '../chatpage/chat.html'
             
         }else{
             e.target.password.value='';

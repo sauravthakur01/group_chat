@@ -1,0 +1,286 @@
+body {
+    margin: 0;
+    padding: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: #dcf8c6;
+  background-image: url(https://artbyrice.com/wp-content/uploads/2018/08/black-background-wood-i-e29da4-4k-hd-desktop-wallpaper-for-4k-ultra-hd.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #eeeed8;
+}
+
+/* .hide-all {
+    background-color: rgb(19, 21, 31);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 100;
+  } */
+
+/* .header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+} */
+
+/* .header h1 {
+  font-family: "Bungee", cursive;
+  color: rgb(255, 255, 255);
+  padding: 15px;
+  margin-top: 30px;
+  background-color: rgba(150, 85, 0, 0.699);
+  border-radius: 6px;
+  width: 900px;
+  text-align: center;
+}
+
+.small-text {
+  font-weight: 900;
+  font-family: "Courier New", Courier, monospace;
+  color: rgb(165, 165, 165);
+  margin-top: 10px;
+  width: 100%;
+   display: block;
+} */
+
+.nav-div{
+    display: flex;
+    background-color: rgba(0, 30, 46);
+    width: auto;
+    height: 9vh;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .nav-user-div{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .nav-user-div img{
+    display: flex;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    margin: 5px;
+  }
+
+  #username {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .logout-div{
+    display: flex;
+    float: right;
+    width: 160px;
+    height: 60px;
+  }
+  #logout {
+    cursor: pointer;
+    margin-top: 15px;
+    margin-left: 56px;
+    height: 28px;
+    border-radius: 4px;
+    border: none;
+    color: antiquewhite;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    background-color:rgb(255, 0, 0)
+  }
+  #logout:hover {
+    background-color: rgb(184, 0, 0);
+    
+  }
+
+  .container-div {
+    display: flex;
+    height: 90vh;
+  width: 100%;
+}
+
+.user-container-div {
+    display: block;
+    width: 30%;
+    height: 100%;
+    margin: 0;
+    padding: 5px;
+  }
+
+  .user-div {
+    display: block;
+    border-radius: 15px;
+    background-color: rgb(16, 16, 24);
+    width: 95%;
+    height: 100px;
+    margin: 5px;
+    padding: 5px;
+    justify-content: center;
+  align-items: center;
+}
+
+.user-div.active-chat {
+    background-color: rgb(43, 46, 116);
+  }
+
+  .user-content{
+    display: flex;
+    width: 90%;
+    margin: 5px;
+    padding: 5px;
+}
+
+.user-content h2 {
+    margin-left: 5px;
+  }
+
+  .user-extra-content {
+    display: flex;
+    font-weight: 900;
+    margin: 5px;
+    font-family: 'Poppins', sans-serif;
+    color: rgb(165, 165, 165);
+    width: 90%;
+    height: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .profile-pic {
+    display: flex;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  float: left;
+}
+
+.chat-container-div{
+    margin: auto;
+    overflow: auto;
+    display: block;
+    background-color: rgba(11, 12, 22, 0.658);
+    background-image: url(https://wallpaperaccess.com/full/2224368.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 90vh;
+    width: 70%;
+  }
+
+  .notification-div {
+    margin: auto;
+    display: block;
+    width: 40%;
+    padding: 1px;
+    
+  color: antiquewhite;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 15px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  float: none;
+  clear: none;
+}
+
+.msg-div {
+    display: block;
+    width: auto;
+   }
+
+   .resize-received{
+    width:95%;
+    float: left;
+   }
+
+   .received{
+    max-width: 70%;
+    margin: 20px 5px 5px 17px;
+    padding: 10px;
+    background-color: #06523be1;
+    border-radius: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+  text-align: left;
+  float: left;
+  clear: left;
+}
+
+.received-name{
+    font-size: 13px;
+    margin-top: 5px;
+    margin-right: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: rgb(255, 94, 0);
+  }
+
+  .received-msg {
+    margin-top: 5px;
+    margin-right: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .received-time {
+    margin-top: 5px;
+    margin-right: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 9px;
+  }
+
+  .resize-sent{
+    width: 95%;
+    float:right;
+  }
+
+  .sent{
+    max-width: 70%;
+    margin: 20px 12px 5px 20px;
+    padding: 10px;
+    background-color: #232324ea;
+    border-radius: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    text-align: right;
+    float: right;
+    clear: right;
+  }
+
+  .sent-name{
+    font-size: 13px;
+    margin-top: 5px;
+    margin-right: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: rgb(0, 238, 255);
+  }
+  .sent-msg{
+    margin-top: 5px;
+    margin-right: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .sent-time{
+    margin-top: 5px;
+    margin-right: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 9px;
+  }
+
+  .sent-confirmation{
+    margin: 5px;
+  }
+
+  .sent-confirmation i.seen{
+    color: #68d7eb;
+    font-size: small;
+  }
