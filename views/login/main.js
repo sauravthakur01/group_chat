@@ -15,6 +15,7 @@ async function signup(e){
     try {
         const response = await axios.post("http://localhost:3000/user/login" , loginDetails)
         if (response.status === 200){
+            localStorage.setItem('userToken' , response.data.token)
             console.log(response.data.token)
             alert('User login success')
             window.location.href = '../chatpage/chat.html'

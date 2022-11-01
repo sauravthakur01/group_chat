@@ -6,6 +6,7 @@ const sequelize = require('./utils/database')
 require('dotenv').config()
 
 const User = require('./models/user');
+const Chat = require('./models/chats')
 
 const userRouter = require('./routes/user');
 
@@ -15,7 +16,8 @@ app.use(express.json())
 app.use(cors());
 app.use(bodyParser.json({extended:false}))
 
-
+Chat.belongsTo(User);
+User.hasMany(Chat);
 
 app.use('/user' , userRouter )
 

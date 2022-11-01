@@ -4,7 +4,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #dcf8c6;
-  background-image: url(https://artbyrice.com/wp-content/uploads/2018/08/black-background-wood-i-e29da4-4k-hd-desktop-wallpaper-for-4k-ultra-hd.jpg);
+ 
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -99,7 +99,7 @@ body {
 
   .container-div {
     display: flex;
-    height: 90vh;
+    height: 86vh;
   width: 100%;
 }
 
@@ -160,7 +160,7 @@ body {
 }
 
 .chat-container-div{
-    margin: auto;
+    margin:0 auto;
     overflow: auto;
     display: block;
     background-color: rgba(11, 12, 22, 0.658);
@@ -168,7 +168,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 90vh;
+    height: 86vh;
     width: 70%;
   }
 
@@ -283,4 +283,30 @@ body {
   .sent-confirmation i.seen{
     color: #68d7eb;
     font-size: small;
+  }
+
+  .style-form{
+    margin:0 auto;
+    width:70% ;
+    background-color:  #0b1b22;
+  }
+
+  .style-form input[type=text]{
+    width: 80%;
+    border: 2px solid;
+    border-radius: 23px;
+    height: 38px;
+    margin: 10px ;
+    text-indent: 15px;
+    font-size: 19px;
+  }
+
+  .style-form input[type=submit]{
+    border-radius: 50%;
+    height: 41px;
+    width: 41px;
+    text-indent: -2px;
+    background-color: #25D366;
+    border: none;
+    color: white;
   }
