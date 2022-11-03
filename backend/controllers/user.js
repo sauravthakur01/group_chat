@@ -48,7 +48,7 @@ exports.postLogin = async(req,res,next)=>{
             if(!matchPassUser){
              return res.status(401).json({message:'User not authorized'})
             }
-            return res.status(200).json({message:'login sucess' ,token:generateAccessToken(user.id) })
+            return res.status(200).json({message:'login sucess' ,token:generateAccessToken(user.id) ,name:user.name})
          });
         
 

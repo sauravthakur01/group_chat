@@ -16,9 +16,10 @@ async function signup(e){
         const response = await axios.post("http://localhost:3000/user/login" , loginDetails)
         if (response.status === 200){
             localStorage.setItem('userToken' , response.data.token)
+            localStorage.setItem('name' , response.data.name)
             console.log(response.data.token)
             alert('User login success')
-            window.location.href = '../chatpage/chat.html'
+            window.location.href = '../group/group.html'
             
         }else{
             e.target.password.value='';
