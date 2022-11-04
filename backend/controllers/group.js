@@ -28,7 +28,7 @@ exports.createGroup = async(req,res,next)=>{
         if(!group){
             res.status(404).json({message:"no name entered"})
         }
-        let data = await req.user.createGroup({name:group})
+        let data = await req.user.createGroup({name:group} , {through: {isAdmin:true}})
         console.log(data) 
         res.status(201).json({ message:'successfully created new group'})
     } catch (err) {

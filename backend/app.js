@@ -9,10 +9,12 @@ const User = require('./models/user');
 const Chat = require('./models/chats');
 const Group = require('./models/group');
 const UserGroup = require('./models/usergroup');
+const Forgotpassword = require('./models/forgetpassword')
 
 const userRouter = require('./routes/user');
 const groupRouter = require('./routes/group');
 const messageRouter = require('./routes/message');
+const forgetpassRouter = require('./routes/forgetpass');
 
 const app = express();
 
@@ -22,8 +24,13 @@ app.use(bodyParser.json({extended:false}))
 
 Chat.belongsTo(User);
 User.hasMany(Chat);
+
 Group.hasMany(Chat);
 Chat.belongsTo(Group);
+
+Forgotpassword.belongsTo(User)
+User.hasMany(Forgotpassword)
+
 User.belongsToMany(Group , {through: UserGroup} )
 Group.belongsToMany(User , {through: UserGroup} )
 
@@ -31,6 +38,7 @@ Group.belongsToMany(User , {through: UserGroup} )
 app.use('/user' , userRouter )
 app.use('/group' , groupRouter)
 app.use('/message' , messageRouter)
+app.use('/password' , forgetpassRouter)
 
 sequelize.sync()
 .then(()=>{

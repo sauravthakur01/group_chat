@@ -54,6 +54,7 @@ form.addEventListener('submit' , async(e)=>{
 
     try {
         const response = await axios.post('http://localhost:3000/group/create-group' ,group , {headers:{'Authorization':token}});
+        e.target.group.value = ""
         loadScreen(e)
 
     } catch (err) {
